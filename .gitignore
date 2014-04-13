@@ -19,3 +19,6 @@ savefile/
 projectile-bookmarks.eld
 session*
 .cask
+.python-environments/
+ac-comphist.dat
+tramp
