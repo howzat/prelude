@@ -43,12 +43,15 @@
 (remove-hook 'after-save-hook
              'executable-make-buffer-file-executable-if-script-p)
 
-;; enable company mode everywhere
+;; enable company mode everywhere and set up python jedi
 (add-hook 'after-init-hook
           (lambda ()
-            (global-company-mode)))
-            ;; (add-hook 'python-mode-hook 'anaconda-mode)
-            ;; (add-to-list 'company-backends 'company-anaconda)))
+            (jedi:install-server)
+            (global-company-mode)
+            (add-hook 'python-mode-hook 'anaconda-mode)
+            (add-hook 'python-mode-hook 'jedi:setup)
+            (setq jedi:complete-on-dot t)
+            (add-to-list 'company-backends 'company-anaconda)))
 
 ;; custom keybindings
 ;; override insertion of hash key because of british keyboards
