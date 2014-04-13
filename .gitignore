@@ -20,3 +20,5 @@ projectile-bookmarks.eld
 session*
 .cask
 tramp
+.python-environments
+ac-comphist.dat
